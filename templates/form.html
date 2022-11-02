@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Car Loan Prediction
+    </title>
+</head>
+<body>
+    <br>
+    <h2 align="center">
+        Car Loan Amount Prediction
+    </h2>
+    <table align="center" cellspacing=5 cellpadding=5 style="border: 1px solid">
+        <form action="{{url_for('predict')}}" method="POST">
+            <tr>
+                <td><label for="carno">Enter the Car No:</label></td>
+                <td><input type="text" name="carno" id="carno"></td>
+            </tr>
+            <tr>
+                <td><label for="mileage">Enter Mileage (Kmpl):</label></td>
+                <td><input type="text" name="mileage" id="mileage"></td>
+            </tr>
+            <tr>
+                <td><label for="engine">Enter Engine Capacity (CC):</label></td>
+                <td><input type="text" name="engine" id="engine"></td>
+            </tr>
+            <tr>
+                <td><label for="max_power">Enter Max Power (BHP):</label></td>
+                <td><input type="text" name="max_power" id="max_power"></td>
+            </tr>
+            <tr>
+                <td><label for="seat">Enter Number of Seats:</label></td>
+                <td><input type="text" name="seat" id="seat"></td>
+            </tr>
+            <tr>
+                <td><label for="year">Enter Manufacture Year:</label></td>
+                <td><input type="text" name="year" id="year"></td>
+            </tr>
+            <tr>
+                <td><label for="distance">Enter Distance Travelled (Km):</label></td>
+                <td><input type="text" name="distance" id="distance"></td>
+            </tr>
+            <tr>
+                <td><label for="fuel">Select vechicle Fuel type:</label></td>
+                <td>
+                    <select name="fuel" id="fuel">
+                    <option value="0">Diesel</option>
+                    <option value="1">Petrol</option>
+                    <option value="2">CNG</option>
+                    <option value="3">LPG</option>
+                    </select>
+                <td>
+            </tr>
+            <tr>
+                <td><label for="sellar">Select Sellar:</label></td>
+                <td>
+                    <select name="sellar" id="sellar">
+                        <option value="0">Individual</option>
+                        <option value="1">Dealer</option>
+                        <option value="2">Trustmark Dealer</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="transmission">Select Transmission Type:</label></td>
+                <td>
+                    <select name="transmission" id="transmission">
+                        <option value="0">Manual</option>
+                        <option value="1">Automatic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="owner">Select your Owner Position:</label></td>
+                <td>
+                    <select name="owner" id="owner">
+                        <option value="0">Test Drive Car</option>
+                        <option value="1">First Owner</option>
+                        <option value="2">Second Owner</option>
+                        <option value="3">Third Owner</option>
+                        <option value="4">Fourth & Above Owner</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit">&nbsp&nbsp&nbsp
+                    <input type="reset">
+                </td>
+            </tr>
+        </form>
+    </table>
+    <br>
+    <center>{{prediction_text}}</center>
+</body>
